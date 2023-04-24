@@ -5,12 +5,14 @@ import com.wuxi.ads.mapper.UserMapper;
 import com.wuxi.ads.service.UserService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
