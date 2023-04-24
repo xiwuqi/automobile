@@ -1,5 +1,9 @@
 package com.wuxi.ads.bean;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
     private Integer userid;
     private String username;

@@ -1,5 +1,8 @@
 package com.wuxi.ads.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CarBrand {
     private Integer brandid;
 

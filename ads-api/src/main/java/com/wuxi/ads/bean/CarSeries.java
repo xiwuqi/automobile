@@ -1,5 +1,9 @@
 package com.wuxi.ads.bean;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class CarSeries {
     private Integer seriesid;
     private String seriesname;

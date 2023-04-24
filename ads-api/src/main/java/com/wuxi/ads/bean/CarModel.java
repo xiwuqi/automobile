@@ -1,7 +1,10 @@
 package com.wuxi.ads.bean;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class CarModel {
     private Integer modelid;
     private String modelname;
