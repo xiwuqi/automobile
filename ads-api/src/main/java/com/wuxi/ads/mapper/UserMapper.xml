@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wangpeng.bms.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="com.wangpeng.bms.model.User">
+<mapper namespace="com.wuxi.ads.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.wuxi.ads.mapper.UserMapper">
         <id column="userId" jdbcType="INTEGER" property="userid" />
         <result column="userName" jdbcType="VARCHAR" property="username" />
         <result column="userPassword" jdbcType="VARCHAR" property="userpassword" />
@@ -20,13 +20,13 @@
         delete from user
         where userId = #{userid,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.wangpeng.bms.model.User">
+    <insert id="insert" parameterType="com.wuxi.ads.bean.User">
         insert into user (userId, userName, userPassword,
                           isAdmin)
         values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR},
                 #{isadmin,jdbcType=TINYINT})
     </insert>
-    <insert id="insertSelective" parameterType="com.wangpeng.bms.model.User">
+    <insert id="insertSelective" parameterType="com.wuxi.ads.bean.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userid != null">
@@ -57,7 +57,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.wangpeng.bms.model.User">
+    <update id="updateByPrimaryKeySelective" parameterType="com.wuxi.ads.bean.User">
         update user
         <set>
             <if test="username != null">
@@ -72,7 +72,7 @@
         </set>
         where userId = #{userid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.wangpeng.bms.model.User">
+    <update id="updateByPrimaryKey" parameterType="com.wuxi.ads.bean.User">
         update user
         set userName = #{username,jdbcType=VARCHAR},
             userPassword = #{userpassword,jdbcType=VARCHAR},
