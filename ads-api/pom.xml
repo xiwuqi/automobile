@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wuxi</groupId>
-    <artifactId>ads</artifactId>
+    <artifactId>ads-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ads</name>
-    <description>asd</description>
+    <name>ads-api</name>
+    <description>ads-api</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

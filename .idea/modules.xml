@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ads/ads.iml" filepath="$PROJECT_DIR$/ads/ads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ads-api/ads-api.iml" filepath="$PROJECT_DIR$/ads-api/ads-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/automobile.iml" filepath="$PROJECT_DIR$/.idea/automobile.iml" />
     </modules>
   </component>
