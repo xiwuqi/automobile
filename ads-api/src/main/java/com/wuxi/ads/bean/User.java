@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 public class User {
     private Integer userid;
     private String username;
-    private String userpassword;
-    private Byte isadmin;
+    private String password;
+    private Byte role;  // 三重模式，0：经理，1：管理员，2：游客，为后期加上工作流做准备
 
     public Integer getUserid() {
         return userid;
@@ -26,19 +26,19 @@ public class User {
         this.username = username;
     }
 
-    public String getUserpassword() {
-        return userpassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserpassword(String userpassword) {
-        this.userpassword = userpassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Byte getIsadmin() {
-        return isadmin;
+    public Byte getRole() {
+        return role;
     }
 
-    public void setIsadmin(Byte isadmin) {
-        this.isadmin = isadmin;
+    public void setRole(Byte role) {
+        this.role = role;
     }
 }

@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(User user) {
-        return userMapper.selectByUsernameAndPasswordAndIsAdmin(user.getUsername(), user.getUserpassword(), user.getIsadmin());
+        return userMapper.selectByUsernameAndPasswordAndRole(user.getUsername(), user.getPassword(), user.getRole());
     }
 
     @Override
@@ -52,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
         User user = new User();
         user.setUsername(username);
-        user.setUserpassword(password);
-        user.setIsadmin((byte)0);
+        user.setPassword(password);
+        user.setRole((byte)0);
         return userMapper.insertSelective(user);
     }
 
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
     public void setPassword(Integer id, String password) {
         User user = new User();
         user.setUserid(id);
-        user.setUserpassword(password);
+        user.setPassword(password);
         userMapper.updateByPrimaryKeySelective(user);
     }
 

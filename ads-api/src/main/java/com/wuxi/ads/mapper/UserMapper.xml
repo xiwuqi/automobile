@@ -2,44 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wuxi.ads.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.wuxi.ads.mapper.UserMapper">
-        <id column="userId" jdbcType="INTEGER" property="userid" />
-        <result column="userName" jdbcType="VARCHAR" property="username" />
-        <result column="userPassword" jdbcType="VARCHAR" property="userpassword" />
-        <result column="isAdmin" jdbcType="TINYINT" property="isadmin" />
+        <id column="id" jdbcType="INTEGER" property="userid" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="role" jdbcType="TINYINT" property="role" />
     </resultMap>
     <sql id="Base_Column_List">
-        userId, userName, userPassword, isAdmin
+        id, username, password, role
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from user
-        where userId = #{userid,jdbcType=INTEGER}
+        where id = #{userid,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete from user
-        where userId = #{userid,jdbcType=INTEGER}
+        where id = #{userid,jdbcType=INTEGER}
     </delete>
     <insert id="insert" parameterType="com.wuxi.ads.bean.User">
-        insert into user (userId, userName, userPassword,
-                          isAdmin)
-        values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR},
-                #{isadmin,jdbcType=TINYINT})
+        insert into user (id, username, password,
+                          role)
+        values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{role,jdbcType=TINYINT})
     </insert>
     <insert id="insertSelective" parameterType="com.wuxi.ads.bean.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userid != null">
-                userId,
+                id,
             </if>
             <if test="username != null">
-                userName,
+                username,
             </if>
-            <if test="userpassword != null">
-                userPassword,
+            <if test="password != null">
+                password,
             </if>
-            <if test="isadmin != null">
-                isAdmin,
+            <if test="role != null">
+                role,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -49,11 +49,11 @@
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
             </if>
-            <if test="userpassword != null">
-                #{userpassword,jdbcType=VARCHAR},
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
             </if>
-            <if test="isadmin != null">
-                #{isadmin,jdbcType=TINYINT},
+            <if test="role != null">
+                #{role,jdbcType=TINYINT},
             </if>
         </trim>
     </insert>
@@ -61,38 +61,38 @@
         update user
         <set>
             <if test="username != null">
-                userName = #{username,jdbcType=VARCHAR},
+                username = #{username,jdbcType=VARCHAR},
             </if>
-            <if test="userpassword != null">
-                userPassword = #{userpassword,jdbcType=VARCHAR},
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
             </if>
-            <if test="isadmin != null">
-                isAdmin = #{isadmin,jdbcType=TINYINT},
+            <if test="role != null">
+                role = #{role,jdbcType=TINYINT},
             </if>
         </set>
-        where userId = #{userid,jdbcType=INTEGER}
+        where id = #{userid,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.wuxi.ads.bean.User">
         update user
-        set userName = #{username,jdbcType=VARCHAR},
-            userPassword = #{userpassword,jdbcType=VARCHAR},
-            isAdmin = #{isadmin,jdbcType=TINYINT}
-        where userId = #{userid,jdbcType=INTEGER}
+        set username = #{username,jdbcType=VARCHAR},
+            password = #{password,jdbcType=VARCHAR},
+            role = #{role,jdbcType=TINYINT}
+        where id = #{userid,jdbcType=INTEGER}
     </update>
-    <select id="selectByUsernameAndPasswordAndIsAdmin" resultMap="BaseResultMap">
+    <select id="selectByUsernameAndPasswordAndRole" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from user
-        where userName = #{username}
-        and userPassword = #{password}
-        and isAdmin = #{isAdmin}
+        where username = #{username}
+        and password = #{password}
+        and role = #{role}
         limit 1
     </select>
     <select id="selectByUsername" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from user
-        where userName = #{username}
+        where username = #{username}
         limit 1
     </select>
     <select id="selectAllByLimit" resultMap="BaseResultMap">
@@ -111,16 +111,16 @@
         select count(*) from user
         <where>
             <if test="username != null and username != '' ">
-                and userName like concat('%',#{username},'%')
+                and username like concat('%',#{username},'%')
             </if>
         </where>
     </select>
     <select id="selectBySearch" resultMap="BaseResultMap">
-        select userId, userName, userPassword, isAdmin
+        select id, username, password, role
         from user
         <where>
             <if test="username != null and username != '' ">
-                and userName like concat('%',#{username},'%')
+                and username like concat('%',#{username},'%')
             </if>
         </where>
         limit #{begin}, #{size}

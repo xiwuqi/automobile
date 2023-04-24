@@ -21,9 +21,9 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User selectByUsernameAndPasswordAndIsAdmin(@Param("username") String username,
+    User selectByUsernameAndPasswordAndRole(@Param("username") String username,
                                                @Param("password") String password,
-                                               @Param("isAdmin") Byte isAdmin);
+                                               @Param("role") Byte role);
 
     User selectByUsername(String username);
 

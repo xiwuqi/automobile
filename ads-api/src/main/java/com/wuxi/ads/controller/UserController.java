@@ -66,13 +66,13 @@ public class UserController {
 
     // 修改密码
     @RequestMapping(value = {"/alterPassword", "reader/alterPassword"})
-    public Integer alterPassword(Integer userid, String username, Byte isadmin, String oldPassword, String newPassword){
+    public Integer alterPassword(Integer userid, String username, Byte role, String oldPassword, String newPassword){
         //检查旧密码是否正确
         User userObj = new User();
         userObj.setUserid(userid);
         userObj.setUsername(username);
-        userObj.setUserpassword(oldPassword);
-        userObj.setIsadmin(isadmin);
+        userObj.setPassword(oldPassword);
+        userObj.setRole(role);
         User user = userService.login(userObj);
         if(user == null) {  //旧密码不正确
             return 0;
