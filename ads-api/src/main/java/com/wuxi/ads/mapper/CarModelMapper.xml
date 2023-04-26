@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuxi.ads.mapper.CarModelMapper">
+  <resultMap id="BaseResultMap" type="com.wuxi.ads.bean.CarModel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="series_id" jdbcType="BIGINT" property="seriesId" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="photo" jdbcType="VARCHAR" property="photo" />
+    <result column="release_date" jdbcType="DATE" property="releaseDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuxi.ads.bean.CarModel">
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, series_id, price, photo, release_date
+  </sql>
+  <sql id="Blob_Column_List">
+    description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from car_model
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from car_model
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.wuxi.ads.bean.CarModel">
+    insert into car_model (id, name, series_id, 
+      price, photo, release_date, 
+      description)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{seriesId,jdbcType=BIGINT}, 
+      #{price,jdbcType=DECIMAL}, #{photo,jdbcType=VARCHAR}, #{releaseDate,jdbcType=DATE}, 
+      #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuxi.ads.bean.CarModel">
+    insert into car_model
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="seriesId != null">
+        series_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="photo != null">
+        photo,
+      </if>
+      <if test="releaseDate != null">
+        release_date,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="seriesId != null">
+        #{seriesId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="photo != null">
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseDate != null">
+        #{releaseDate,jdbcType=DATE},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuxi.ads.bean.CarModel">
+    update car_model
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="seriesId != null">
+        series_id = #{seriesId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="photo != null">
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseDate != null">
+        release_date = #{releaseDate,jdbcType=DATE},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuxi.ads.bean.CarModel">
+    update car_model
+    set name = #{name,jdbcType=VARCHAR},
+      series_id = #{seriesId,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      photo = #{photo,jdbcType=VARCHAR},
+      release_date = #{releaseDate,jdbcType=DATE},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuxi.ads.bean.CarModel">
+    update car_model
+    set name = #{name,jdbcType=VARCHAR},
+      series_id = #{seriesId,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      photo = #{photo,jdbcType=VARCHAR},
+      release_date = #{releaseDate,jdbcType=DATE}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
