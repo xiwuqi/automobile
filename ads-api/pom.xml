@@ -56,6 +56,18 @@
 
     <build>
         <plugins>
+            <!--mybatis反向工程插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.6</version>
+                <configuration>
+                    <!--配置文件的位置-->
+                    <configurationFile>GeneratorMapper.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
             <!--maven插件信息-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
