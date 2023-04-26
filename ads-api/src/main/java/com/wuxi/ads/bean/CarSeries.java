@@ -1,35 +1,33 @@
 package com.wuxi.ads.bean;
 
-
-import org.springframework.stereotype.Component;
-
-@Component
 public class CarSeries {
-    private Integer seriesid;
-    private String seriesname;
-    private String brandid;
+    private Long id;
 
-    public Integer getSeriesid() {
-        return seriesid;
+    private String name;
+
+    private Long brandId;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setSeriesid(Integer seriesid) {
-        this.seriesid = seriesid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getSeriesname() {
-        return seriesname;
+    public String getName() {
+        return name;
     }
 
-    public void setSeriesname(String seriesname) {
-        this.seriesname = seriesname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBrandid() {
-        return brandid;
+    public Long getBrandId() {
+        return brandId;
     }
 
-    public void setBrandid(String brandid) {
-        this.brandid = brandid;
+    public void setBrandId(Long brandId) {
+        this.brandId = brandId;
     }
 }

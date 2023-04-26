@@ -1,34 +1,33 @@
 package com.wuxi.ads.bean;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class CarLike {
-    private Integer likeid;
-    private Integer userid;
-    private Integer modelid;
+    private Integer id;
 
-    public Integer getLikeid() {
-        return likeid;
+    private Integer userId;
+
+    private Integer carId;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setLikeid(Integer likeid) {
-        this.likeid = likeid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getModelid() {
-        return modelid;
+    public Integer getCarId() {
+        return carId;
     }
 
-    public void setModelid(Integer modelid) {
-        this.modelid = modelid;
+    public void setCarId(Integer carId) {
+        this.carId = carId;
     }
 }

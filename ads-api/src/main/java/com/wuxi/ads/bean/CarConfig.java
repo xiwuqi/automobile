@@ -1,43 +1,43 @@
 package com.wuxi.ads.bean;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class CarConfig {
-    private Integer configid;
-    private String configname;
-    private String configvalue;
-    private Integer modelid;
+    private Long id;
 
-    public Integer getConfigid() {
-        return configid;
+    private String name;
+
+    private String value;
+
+    private Long modelId;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setConfigid(Integer configid) {
-        this.configid = configid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getConfigname() {
-        return configname;
+    public String getName() {
+        return name;
     }
 
-    public void setConfigname(String configname) {
-        this.configname = configname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getConfigvalue() {
-        return configvalue;
+    public String getValue() {
+        return value;
     }
 
-    public void setConfigvalue(String configvalue) {
-        this.configvalue = configvalue;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public Integer getModelid() {
-        return modelid;
+    public Long getModelId() {
+        return modelId;
     }
 
-    public void setModelid(Integer modelid) {
-        this.modelid = modelid;
+    public void setModelId(Long modelId) {
+        this.modelId = modelId;
     }
 }

@@ -1,37 +1,33 @@
 package com.wuxi.ads.bean;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class CarBrand {
-    private Integer brandid;
+    private Integer id;
 
-    private String brandname;
+    private String brandName;
 
-    private String brandlogo;
+    private String logo;
 
-
-    public Integer getBrandid() {
-        return brandid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBrandid(Integer brandid) {
-        this.brandid = brandid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getBrandname() {
-        return brandname;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setBrandname(String brandname) {
-        this.brandname = brandname;
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
     }
 
-    public String getBrandlogo() {
-        return brandlogo;
+    public String getLogo() {
+        return logo;
     }
 
-    public void setBrandlogo(String brandlogo) {
-        this.brandlogo = brandlogo;
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }

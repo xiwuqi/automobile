@@ -1,81 +1,76 @@
 package com.wuxi.ads.bean;
 
-import org.springframework.stereotype.Component;
-
+import java.math.BigDecimal;
 import java.util.Date;
 
-@Component
 public class CarModel {
-    private Integer modelid;
-    private String modelname;
-    private String seriesid;
-    private Integer modelprice;
-    private String modeldesc;
-    private String modelimg;
-    private Date releasedate;
-    private String releasedatestr;
+    private Long id;
 
-    public Integer getModelid() {
-        return modelid;
+    private String name;
+
+    private Long seriesId;
+
+    private BigDecimal price;
+
+    private String photo;
+
+    private Date releaseDate;
+
+    private String description;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setModelid(Integer modelid) {
-        this.modelid = modelid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getModelname() {
-        return modelname;
+    public String getName() {
+        return name;
     }
 
-    public void setModelname(String modelname) {
-        this.modelname = modelname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSeriesid() {
-        return seriesid;
+    public Long getSeriesId() {
+        return seriesId;
     }
 
-    public void setSeriesid(String seriesid) {
-        this.seriesid = seriesid;
+    public void setSeriesId(Long seriesId) {
+        this.seriesId = seriesId;
     }
 
-    public Integer getModelprice() {
-        return modelprice;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setModelprice(Integer modelprice) {
-        this.modelprice = modelprice;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
-    public String getModeldesc() {
-        return modeldesc;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setModeldesc(String modeldesc) {
-        this.modeldesc = modeldesc;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
-    public String getModelimg() {
-        return modelimg;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setModelimg(String modelimg) {
-        this.modelimg = modelimg;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public Date getReleasedate() {
-        return releasedate;
+    public String getDescription() {
+        return description;
     }
 
-    public void setReleasedate(Date releasedate) {
-        this.releasedate = releasedate;
-    }
-
-    public String getReleasedatestr() {
-        return releasedatestr;
-    }
-
-    public void setReleasedatestr(String releasedatestr) {
-        this.releasedatestr = releasedatestr;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
