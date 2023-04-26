@@ -125,7 +125,7 @@ CREATE TABLE user (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   username VARCHAR(50) NOT NULL COMMENT '用户名',
   password VARCHAR(255) NOT NULL COMMENT '密码',
-  role tinyint(4) NOT NULL DEFAULT 3 COMMENT '角色（1:经理/2:管理员/3:访客）',
+  role tinyint(4) NOT NULL DEFAULT 3 COMMENT '角色（0:经理/1:管理员/2:访客）',
   PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
