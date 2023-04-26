@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-@Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userid);
 
@@ -22,8 +21,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByUsernameAndPasswordAndRole(@Param("username") String username,
-                                               @Param("password") String password,
-                                               @Param("role") Byte role);
+                                            @Param("password") String password,
+                                            @Param("role") Byte role);
 
     User selectByUsername(String username);
 
